@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather Forecast</title>
+</head>
+<body>
+  <script>
+    const url = "https://api.weather.gov/gridpoints/VEF/122,98/forecast";
+    
+    async function getWeather() {
+      const result = await fetch(url);
+      result.json().then(json => {
+        console.log(json["properties"]["periods"]["0"]);
+      });
+    }
+    
+    getWeather();
+  </script>
+</body>
+</html>
